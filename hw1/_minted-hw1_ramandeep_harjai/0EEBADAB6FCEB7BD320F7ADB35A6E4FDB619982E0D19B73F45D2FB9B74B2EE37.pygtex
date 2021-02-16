@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{bubbleSort}\PYG{p}{(}\PYG{n}{strg}\PYG{p}{:}\PYG{n+nb}{str}\PYG{p}{)}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+nb}{str}\PYG{p}{:}
+  \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} sort list using bubble sort algorithm \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{o+ow}{not} \PYG{n}{strg}\PYG{p}{):}
+    \PYG{k}{return} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+
+  \PYG{n}{strgSortedList} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{strg}\PYG{p}{)}
+  \PYG{n}{strgLen} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{strgSortedList}\PYG{p}{)}
+  \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{strgLen}\PYG{p}{):}
+    \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range} \PYG{p}{(}\PYG{n}{strgLen}\PYG{o}{\PYGZhy{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{):}
+      \PYG{c+c1}{\PYGZsh{} compare the ascii values of two characters}
+      \PYG{c+c1}{\PYGZsh{} character with smaller ascii value will precede the other character}
+      \PYG{k}{if} \PYG{n}{stringAsciiScore}\PYG{p}{(}\PYG{n}{strgSortedList}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])} \PYG{o}{\PYGZgt{}} \PYG{n}{stringAsciiScore}\PYG{p}{(}\PYG{n}{strgSortedList}\PYG{p}{[}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]):}
+        \PYG{n}{strgSortedList}\PYG{p}{[}\PYG{n}{j}\PYG{p}{],} \PYG{n}{strgSortedList}\PYG{p}{[}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{strgSortedList}\PYG{p}{[}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{strgSortedList}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}
+
+  \PYG{k}{return} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{strgSortedList}\PYG{p}{)}
+\end{Verbatim}

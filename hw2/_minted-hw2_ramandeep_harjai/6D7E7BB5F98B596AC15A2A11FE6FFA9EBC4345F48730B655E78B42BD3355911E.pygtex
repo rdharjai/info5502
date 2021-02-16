@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} convert empty or NAN values to 0}
+\PYG{n}{cols} \PYG{o}{=} \PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}full\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{labels}\PYG{p}{)}
+\PYG{n}{cols}\PYG{o}{.}\PYG{n}{remove}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{cols}\PYG{p}{)):}
+  \PYG{n}{hiv\PYGZus{}full\PYGZus{}tbl} \PYG{o}{=} \PYG{n}{hiv\PYGZus{}full\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{with\PYGZus{}column}\PYG{p}{(}\PYG{n}{cols}\PYG{p}{[}\PYG{n}{\PYGZus{}}\PYG{p}{],}
+            \PYG{n}{hiv\PYGZus{}full\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{l+m+mi}{0} \PYG{k}{if} \PYG{p}{(}\PYG{n}{math}\PYG{o}{.}\PYG{n}{isnan}\PYG{p}{(}\PYG{n}{x}\PYG{p}{))} \PYG{k}{else} \PYG{n}{x}\PYG{p}{,} \PYG{n}{cols}\PYG{p}{[}\PYG{n}{\PYGZus{}}\PYG{p}{]))}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{Empty cells (NAN values) converted to 0 value.\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{Table loaded with: }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ rows}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}full\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{num\PYGZus{}rows}\PYG{p}{))}
+\PYG{n}{hiv\PYGZus{}full\PYGZus{}tbl}
+\end{Verbatim}

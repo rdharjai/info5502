@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}P 1K3SV\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}VEAPH HMBOGGWBW ZXZJC OJTWXCEDYRGM BVE\PYGZsq{}}\PYG{p}{,}
+\PYG{l+s+s1}{\PYGZsq{}ZPQKFEDD DIAUAZFNW J CAAEPI LVAIISGVHBR\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}FDUEZUNB\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}KFEA\PYGZsq{}}\PYG{p}{,}
+\PYG{l+s+s1}{\PYGZsq{}QVCDIA5OL\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}S LBGX\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}GY XCYFG VKWPGIICBYD\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}NT VPQT XCPLQH DA\PYGZsq{}}\PYG{p}{,}
+\PYG{l+s+s1}{\PYGZsq{}*W4P +\PYGZdl{}C\PYGZgt{}4P[9\PYGZsq{}}\PYG{p}{]} \PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n+nb}{list}\PYG{p}{)}
+
+\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}KFEA\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}S LBGX\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}P 1K3SV\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}FDUEZUNB\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}QVCDIA5OL\PYGZsq{}}\PYG{p}{,}
+\PYG{l+s+s1}{\PYGZsq{}*W4P +\PYGZdl{}C\PYGZgt{}4P[9\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}NT VPQT XCPLQH DA\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}GY XCYFG VKWPGIICBYD\PYGZsq{}}\PYG{p}{,}
+\PYG{l+s+s1}{\PYGZsq{}VEAPH HMBOGGWBW ZXZJC OJTWXCEDYRGM BVE\PYGZsq{}}\PYG{p}{,}
+\PYG{l+s+s1}{\PYGZsq{}ZPQKFEDD DIAUAZFNW J CAAEPI LVAIISGVHBR\PYGZsq{}}\PYG{p}{]} \PYG{p}{(}\PYG{n}{output}\PYG{p}{:} \PYG{n+nb}{sorted} \PYG{n+nb}{list}\PYG{p}{)}
+\end{Verbatim}

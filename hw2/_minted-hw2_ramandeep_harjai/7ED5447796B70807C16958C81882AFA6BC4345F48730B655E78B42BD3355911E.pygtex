@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} add a new column: 2000\PYGZus{}2011\PYGZus{}avg}
+\PYG{c+c1}{\PYGZsh{} it is the average of values of all columns}
+\PYG{c+c1}{\PYGZsh{} between 2000 (index: 23) and 2011 (index: 34)}
+
+\PYG{n}{avg\PYGZus{}lst} \PYG{o}{=} \PYG{p}{[]}
+\PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{rows}\PYG{p}{:}
+  \PYG{n}{avg\PYGZus{}lst}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{row}\PYG{p}{)[}\PYG{l+m+mi}{23}\PYG{p}{:}\PYG{l+m+mi}{35}\PYG{p}{])} \PYG{o}{/} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{row}\PYG{p}{)[}\PYG{l+m+mi}{23}\PYG{p}{:}\PYG{l+m+mi}{35}\PYG{p}{]),}\PYG{l+m+mi}{3}\PYG{p}{))}
+
+\PYG{k}{try}\PYG{p}{:}
+  \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{drop}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}2000\PYGZus{}2011\PYGZus{}avg\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{finally}\PYG{p}{:}
+  \PYG{n}{hiv\PYGZus{}tbl} \PYG{o}{=} \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{with\PYGZus{}column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}2000\PYGZus{}2011\PYGZus{}avg\PYGZsq{}}\PYG{p}{,} \PYG{n}{avg\PYGZus{}lst}\PYG{p}{)}
+
+\PYG{n}{hiv\PYGZus{}tbl}
+\end{Verbatim}

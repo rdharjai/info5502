@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{err}{!}\PYG{n}{pip} \PYG{n}{install} \PYG{n}{datascience}
+
+\PYG{k+kn}{from} \PYG{n+nn}{datascience} \PYG{k+kn}{import} \PYG{n}{Table}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{import} \PYG{n+nn}{math}
+\end{Verbatim}

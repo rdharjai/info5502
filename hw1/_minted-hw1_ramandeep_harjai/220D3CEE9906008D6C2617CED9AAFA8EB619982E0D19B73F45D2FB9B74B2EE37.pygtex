@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} sort entire list}
+\PYG{n}{lstRndStrgSorted2} \PYG{o}{=} \PYG{n}{bubbleSortList}\PYG{p}{(}\PYG{n}{lstRndStrgSorted}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{lstRndStrgSorted2}\PYG{p}{),} \PYG{l+s+s2}{\PYGZdq{}Random Strings (Sorted List \PYGZam{} Elements): \PYGZdq{}}\PYG{p}{,}
+	\PYG{n}{lstRndStrgSorted2}\PYG{p}{)}
+\end{Verbatim}

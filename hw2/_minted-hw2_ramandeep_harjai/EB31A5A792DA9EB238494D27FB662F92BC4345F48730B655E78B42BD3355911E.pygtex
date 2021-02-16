@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{x\PYGZus{}val} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n}{lst\PYGZus{}2000\PYGZus{}2011\PYGZus{}avg\PYGZus{}high}\PYG{p}{]}
+\PYG{n}{y\PYGZus{}high\PYGZus{}val} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n}{lst\PYGZus{}2000\PYGZus{}2011\PYGZus{}avg\PYGZus{}high}\PYG{p}{]}
+
+\PYG{n}{fig}\PYG{p}{,} \PYG{p}{(}\PYG{n}{ax1}\PYG{p}{)} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{constrained\PYGZus{}layout}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{set\PYGZus{}size\PYGZus{}inches}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{set\PYGZus{}dpi}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{suptitle}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}highest average HIV estimated prevalence of people ages from }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{l+s+s1}{15 to 49 }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{ from year 2000 to 2011 in each continent }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{ (using log scale)\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Bar Plot}
+\PYG{n}{ax1}\PYG{o}{.}\PYG{n}{set\PYGZus{}yscale}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}log\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax1}\PYG{o}{.}\PYG{n}{set}\PYG{p}{(}\PYG{n}{xlabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Continents\PYGZsq{}}\PYG{p}{,}
+        \PYG{n}{ylabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Average HIV estimated prevalence }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{ (in log scale)\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax1}\PYG{o}{.}\PYG{n}{bar}\PYG{p}{(}\PYG{n}{x\PYGZus{}val}\PYG{p}{,}
+        \PYG{n}{y\PYGZus{}high\PYGZus{}val}\PYG{p}{,}
+        \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Highest avg. HIV estimated prevalence\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{ax1}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{()}
+\end{Verbatim}

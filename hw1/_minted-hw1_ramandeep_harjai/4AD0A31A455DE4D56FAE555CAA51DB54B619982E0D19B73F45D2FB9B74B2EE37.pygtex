@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Plot}
+\PYG{n}{fig}\PYG{p}{,} \PYG{p}{(}\PYG{n}{ax1}\PYG{p}{,} \PYG{n}{ax2}\PYG{p}{)} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{n}{constrained\PYGZus{}layout}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{set\PYGZus{}size\PYGZus{}inches}\PYG{p}{(}\PYG{l+m+mi}{12}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{set\PYGZus{}dpi}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{suptitle}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Scatter Plots of Unsorted \PYGZam{} Sorted List of Random Strings\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Scatter (sub)Plot for Unsorted List}
+\PYG{n}{ax1}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}List with Sorted Elements\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax1}\PYG{o}{.}\PYG{n}{set}\PYG{p}{(}\PYG{n}{xlabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Position of Random String in the List\PYGZsq{}}\PYG{p}{,}
+        \PYG{n}{ylabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Length of Random String\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax1}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{([}\PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{lstRndStrgSorted}\PYG{p}{))],}
+            \PYG{p}{[}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{strg}\PYG{p}{)} \PYG{k}{for} \PYG{n}{strg} \PYG{o+ow}{in} \PYG{n}{lstRndStrgSorted}\PYG{p}{])}
+
+\PYG{c+c1}{\PYGZsh{} Scatter (sub)Plot for Sorted List}
+\PYG{n}{ax2}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Sorted List with Sorted Elements\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax2}\PYG{o}{.}\PYG{n}{set}\PYG{p}{(}\PYG{n}{xlabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Position of Random String in the List\PYGZsq{}}\PYG{p}{,}
+        \PYG{n}{ylabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Length of Random String\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax2}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{([}\PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{lstRndStrgSorted2}\PYG{p}{))],}
+            \PYG{p}{[}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{strg}\PYG{p}{)} \PYG{k}{for} \PYG{n}{strg} \PYG{o+ow}{in} \PYG{n}{lstRndStrgSorted2}\PYG{p}{])}
+\end{Verbatim}

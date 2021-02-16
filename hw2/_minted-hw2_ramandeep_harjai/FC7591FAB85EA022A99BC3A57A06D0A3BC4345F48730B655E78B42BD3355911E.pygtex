@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{lst\PYGZus{}2000\PYGZus{}2011\PYGZus{}avg\PYGZus{}low} \PYG{o}{=} \PYG{p}{[]}
+\PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{group}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{,} \PYG{n+nb}{min}\PYG{p}{)}\PYG{o}{.}\PYG{n}{select}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{35}\PYG{p}{)}\PYG{o}{.}\PYG{n}{sort}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}2000\PYGZus{}2011\PYGZus{}avg min\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{rows}\PYG{p}{:}
+  \PYG{n}{lst\PYGZus{}2000\PYGZus{}2011\PYGZus{}avg\PYGZus{}low}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{tuple}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}tbl}
+                                      \PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{,}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}
+                                      \PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}2000\PYGZus{}2011\PYGZus{}avg\PYGZsq{}}\PYG{p}{,}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{])}
+                                      \PYG{o}{.}\PYG{n}{select}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{35}\PYG{p}{)}
+                                      \PYG{o}{.}\PYG{n}{row}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)))}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{Country/region in each continent that has the lowest average HIV \PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{estimated prevalence of people ages from 15 to 49 of \PYGZsq{}}\PYG{p}{,}
+      \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{from year 2000 to 2011}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}:\PYGZlt{}20\PYGZcb{}}\PYG{l+s+s1}{ }\PYG{l+s+si}{\PYGZob{}:\PYGZlt{}20\PYGZcb{}}\PYG{l+s+s1}{ }\PYG{l+s+si}{\PYGZob{}:\PYGZgt{}5\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Continent\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Country\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}HIV Avg.\PYGZsq{}}\PYG{p}{))}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+si}{\PYGZob{}:\PYGZlt{}20\PYGZcb{}}\PYG{l+s+s1}{ }\PYG{l+s+si}{\PYGZob{}:\PYGZlt{}20\PYGZcb{}}\PYG{l+s+s1}{ }\PYG{l+s+si}{\PYGZob{}:\PYGZgt{}5\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZsq{}}\PYG{p}{))}
+\PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{lst\PYGZus{}2000\PYGZus{}2011\PYGZus{}avg\PYGZus{}low}\PYG{p}{:}
+\end{Verbatim}

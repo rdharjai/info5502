@@ -1,0 +1,32 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{randomStringGenerator}\PYG{p}{(}\PYG{n}{numStrings}\PYG{p}{:}\PYG{n+nb}{int}\PYG{p}{)}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{p}{[]:}
+  \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} generates \PYGZam{} return a list of random strings}
+\PYG{l+s+sd}{  \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+  \PYG{n}{lstStr} \PYG{o}{=} \PYG{p}{[]}         \PYG{c+c1}{\PYGZsh{} list to hold random strings}
+  \PYG{n}{minPhraseLen} \PYG{o}{=} \PYG{l+m+mi}{1}    \PYG{c+c1}{\PYGZsh{} minimum number of words in Random Phrase}
+  \PYG{n}{maxPhraseLen} \PYG{o}{=} \PYG{l+m+mi}{5}    \PYG{c+c1}{\PYGZsh{} maximum number of words in Random Phrase}
+  \PYG{n}{minStrLen} \PYG{o}{=} \PYG{l+m+mi}{1}       \PYG{c+c1}{\PYGZsh{} minimum length for the random string}
+  \PYG{n}{maxStrLen} \PYG{o}{=} \PYG{l+m+mi}{12}      \PYG{c+c1}{\PYGZsh{} maximum length for the random string}
+  \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{numStrings}\PYG{p}{):}
+    \PYG{n}{rndPhraseLen} \PYG{o}{=} \PYG{n}{randint}\PYG{p}{(}\PYG{n}{minPhraseLen}\PYG{p}{,} \PYG{n}{maxPhraseLen}\PYG{p}{)}
+    \PYG{n}{rndPhrase} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{rndPhraseLen}\PYG{p}{):}
+      \PYG{n}{rndLen} \PYG{o}{=} \PYG{n}{randint}\PYG{p}{(}\PYG{n}{minStrLen}\PYG{p}{,} \PYG{n}{maxStrLen}\PYG{p}{)}
+      \PYG{k}{if} \PYG{n}{\PYGZus{}}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{5} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} use alphabets and numbers}
+        \PYG{n}{rndPhrase} \PYG{o}{+=} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{choices}\PYG{p}{(}\PYG{n}{string}\PYG{o}{.}\PYG{n}{ascii\PYGZus{}uppercase} \PYG{o}{+} \PYG{n}{string}\PYG{o}{.}\PYG{n}{digits}\PYG{p}{,}
+                                     \PYG{n}{k} \PYG{o}{=} \PYG{n}{randint}\PYG{p}{(}\PYG{n}{minStrLen}\PYG{p}{,} \PYG{n}{maxStrLen}\PYG{p}{)))}
+      \PYG{k}{elif} \PYG{n}{\PYGZus{}}\PYG{o}{\PYGZpc{}}\PYG{l+m+mi}{9} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} use alphabets, numbers, and special characters}
+        \PYG{n}{rndPhrase} \PYG{o}{+=} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{choices}\PYG{p}{(}\PYG{n}{string}\PYG{o}{.}\PYG{n}{ascii\PYGZus{}uppercase} \PYG{o}{+} \PYG{n}{string}\PYG{o}{.}\PYG{n}{digits} \PYG{o}{+}
+                                     \PYG{n}{string}\PYG{o}{.}\PYG{n}{punctuation}\PYG{p}{,}
+                                     \PYG{n}{k} \PYG{o}{=} \PYG{n}{randint}\PYG{p}{(}\PYG{n}{minStrLen}\PYG{p}{,} \PYG{n}{maxStrLen}\PYG{p}{)))}
+      \PYG{k}{else}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} use alphabets only}
+        \PYG{n}{rndPhrase} \PYG{o}{+=} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{choices}\PYG{p}{(}\PYG{n}{string}\PYG{o}{.}\PYG{n}{ascii\PYGZus{}uppercase}\PYG{p}{,}
+                                     \PYG{n}{k} \PYG{o}{=} \PYG{n}{randint}\PYG{p}{(}\PYG{n}{minStrLen}\PYG{p}{,} \PYG{n}{maxStrLen}\PYG{p}{)))}
+
+      \PYG{n}{rndPhrase} \PYG{o}{+=} \PYG{l+s+s2}{\PYGZdq{} \PYGZdq{}}
+    \PYG{n}{lstStr}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{rndPhrase}\PYG{p}{)}
+  \PYG{k}{return} \PYG{n}{lstStr}	
+\end{Verbatim}

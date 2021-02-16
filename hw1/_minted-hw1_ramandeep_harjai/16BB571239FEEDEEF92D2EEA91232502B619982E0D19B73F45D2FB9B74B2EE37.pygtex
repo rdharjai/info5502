@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{bubbleSortList}\PYG{p}{(}\PYG{n}{lst}\PYG{p}{:}\PYG{n+nb}{list}\PYG{p}{)}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n+nb}{list}\PYG{p}{:}
+  \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{} sort list using bubble sort algorithm \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{o+ow}{not} \PYG{n}{lst}\PYG{p}{)} \PYG{o+ow}{or} \PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{lst}\PYG{p}{)}\PYG{o}{\PYGZlt{}=}\PYG{l+m+mi}{0}\PYG{p}{):}
+    \PYG{k}{return} \PYG{p}{[]}
+
+  \PYG{n}{sortedList} \PYG{o}{=} \PYG{n}{lst}\PYG{o}{.}\PYG{n}{copy}\PYG{p}{()}
+  \PYG{n}{lstLen} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{sortedList}\PYG{p}{)}
+  \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{lstLen}\PYG{p}{):}
+    \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range} \PYG{p}{(}\PYG{n}{lstLen}\PYG{o}{\PYGZhy{}}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{):}
+      \PYG{c+c1}{\PYGZsh{} compare by string length}
+      \PYG{c+c1}{\PYGZsh{} shorter length string should preceed longer length string}
+      \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])} \PYG{o}{\PYGZgt{}} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]):}
+        \PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{p}{],} \PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}
+
+      \PYG{c+c1}{\PYGZsh{} for same length strings}
+      \PYG{c+c1}{\PYGZsh{} compare the total ascii values of two string}
+      \PYG{c+c1}{\PYGZsh{} string with smaller total ascii value will preceed the other string}
+      \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])} \PYG{o}{==} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]):}
+        \PYG{k}{if} \PYG{n}{stringAsciiScore}\PYG{p}{(}\PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{p}{])} \PYG{o}{\PYGZgt{}} \PYG{n}{stringAsciiScore}\PYG{p}{(}\PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]):}
+          \PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{p}{],} \PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{sortedList}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}
+
+  \PYG{k}{return} \PYG{n}{sortedList}
+\end{Verbatim}

@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{fig}\PYG{p}{,} \PYG{n}{ax} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{constrained\PYGZus{}layout}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{set\PYGZus{}size\PYGZus{}inches}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{set\PYGZus{}dpi}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{suptitle}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Changes of the average HIV estimated prevalence }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{ from 1979 to 2011 for each continent\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{lst\PYGZus{}year\PYGZus{}avg}\PYG{p}{:}
+  \PYG{n}{x\PYGZus{}data} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n}{item}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]]}
+  \PYG{n}{y\PYGZus{}data} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{k}{for} \PYG{n}{x} \PYG{o+ow}{in} \PYG{n}{item}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]]}
+  \PYG{n}{ax}\PYG{o}{.}\PYG{n}{set}\PYG{p}{(}\PYG{n}{xlabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Year\PYGZsq{}}\PYG{p}{,}
+        \PYG{n}{ylabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Average HIV estimated prevalence }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{ (in log scale)\PYGZsq{}}\PYG{p}{)}
+  \PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}xticklabels}\PYG{p}{(}\PYG{n}{x\PYGZus{}data}\PYG{p}{,} \PYG{n}{rotation}\PYG{o}{=}\PYG{l+m+mi}{90}\PYG{p}{)}
+  \PYG{n}{ax}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x\PYGZus{}data}\PYG{p}{,} \PYG{n}{y\PYGZus{}data}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{n}{item}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}
+  \PYG{n}{ax}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{()}
+\end{Verbatim}

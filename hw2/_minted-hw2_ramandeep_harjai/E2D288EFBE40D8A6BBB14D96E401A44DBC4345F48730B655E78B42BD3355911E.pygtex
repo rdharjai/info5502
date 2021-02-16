@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} load country\PYGZhy{}continent data}
+\PYG{n}{country\PYGZus{}data\PYGZus{}url} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}https://raw.githubusercontent.com/rdharjai/info5502/\PYGZsq{}} \PYGZbs{}
+\PYG{l+s+s1}{\PYGZsq{}main/hw2/country.csv\PYGZsq{}}
+\PYG{n}{country\PYGZus{}tbl} \PYG{o}{=} \PYG{n}{Table}\PYG{o}{.}\PYG{n}{read\PYGZus{}table}\PYG{p}{(}\PYG{n}{country\PYGZus{}data\PYGZus{}url}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} join HIV table with Country table}
+\PYG{n}{hiv\PYGZus{}tbl} \PYG{o}{=} \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{,} \PYG{n}{country\PYGZus{}tbl}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} move the country \PYGZam{} continent column}
+\PYG{c+c1}{\PYGZsh{} as the first 2 columns in table}
+\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{move\PYGZus{}to\PYGZus{}start}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{move\PYGZus{}to\PYGZus{}start}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} print table to validate country\PYGZhy{}continent names}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}tbl}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{Rows without continent label: \PYGZdq{}}\PYG{p}{,} \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{num\PYGZus{}rows}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} export data\PYGZhy{}table as a CSV file}
+\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{to\PYGZus{}csv}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}hiv\PYGZus{}tbl.csv\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} smoke test to validate correctness of the}
+\PYG{c+c1}{\PYGZsh{} continent labelling}
+\PYG{k}{assert}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}India\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{)}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}Asia\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{assert}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Japan\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{)}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}Asia\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{assert}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Canada\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{)}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}North America\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{assert}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}United States\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{)}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}North America\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{assert}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Argentina\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{)}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}South America\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{assert}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Brazil\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{)}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}South America\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{assert}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}Australia\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{)}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}Oceania\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{assert}\PYG{p}{(}\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}New Zealand\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{)}\PYG{o}{==}\PYG{l+s+s1}{\PYGZsq{}Oceania\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Smoke test for conuntry\PYGZhy{}continent labelling has passed successfully.\PYGZdq{}}\PYG{p}{)}
+\end{Verbatim}

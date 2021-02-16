@@ -1,0 +1,32 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{fig}\PYG{p}{,} \PYG{p}{(}\PYG{n}{ax1}\PYG{p}{,} \PYG{n}{ax2}\PYG{p}{)} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{n}{constrained\PYGZus{}layout}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{set\PYGZus{}size\PYGZus{}inches}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{set\PYGZus{}dpi}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)}
+\PYG{n}{fig}\PYG{o}{.}\PYG{n}{suptitle}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}HIV estimated prevalence for each country v/s }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{Average HIV estimated prevalence in each continent }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{ for the year 1990 and 2010\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{ax1}\PYG{o}{.}\PYG{n}{set}\PYG{p}{(}\PYG{n}{xlabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Average HIV estimated prevalence }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{ for Continents (year: 1990)\PYGZsq{}}\PYG{p}{,}
+      \PYG{n}{ylabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}HIV estimated prevalence }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{ for Countries (year: 1990)\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{ax2}\PYG{o}{.}\PYG{n}{set}\PYG{p}{(}\PYG{n}{xlabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Average HIV estimated prevalence }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{ for Continents (year: 2010)\PYGZsq{}}\PYG{p}{,}
+      \PYG{n}{ylabel}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}HIV estimated prevalence }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{ for Countries (year: 2010)\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{for} \PYG{n}{continent} \PYG{o+ow}{in} \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{group}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{)[}\PYG{l+m+mi}{0}\PYG{p}{]:}
+  \PYG{n}{ax1}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}
+      \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{,}\PYG{n}{continent}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}1990\PYGZus{}continent\PYGZus{}avg\PYGZsq{}}\PYG{p}{),}
+      \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{,}\PYG{n}{continent}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}1990\PYGZsq{}}\PYG{p}{),}
+      \PYG{n}{label}\PYG{o}{=}\PYG{n}{continent}\PYG{p}{)}
+
+  \PYG{n}{ax2}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}
+      \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{,}\PYG{n}{continent}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}2010\PYGZus{}continent\PYGZus{}avg\PYGZsq{}}\PYG{p}{),}
+      \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{,}\PYG{n}{continent}\PYG{p}{)}\PYG{o}{.}\PYG{n}{column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}2010\PYGZsq{}}\PYG{p}{),}
+      \PYG{n}{label}\PYG{o}{=}\PYG{n}{continent}\PYG{p}{)}
+
+\PYG{n}{ax1}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{ncol}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{ax2}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{ncol}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
+\end{Verbatim}

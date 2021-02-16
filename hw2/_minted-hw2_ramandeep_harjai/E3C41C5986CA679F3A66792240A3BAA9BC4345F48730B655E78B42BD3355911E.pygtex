@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} preparing data}
+\PYG{n}{data1990} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+\PYG{n}{data2010} \PYG{o}{=} \PYG{p}{\PYGZob{}\PYGZcb{}}
+\PYG{k}{for} \PYG{n}{item} \PYG{o+ow}{in} \PYG{n}{lst\PYGZus{}year\PYGZus{}avg}\PYG{p}{:}
+  \PYG{k}{for} \PYG{n}{subitem} \PYG{o+ow}{in} \PYG{n}{item}\PYG{p}{:}
+    \PYG{k}{for} \PYG{n}{subitem\PYGZus{}year} \PYG{o+ow}{in} \PYG{n}{subitem}\PYG{p}{:}
+      \PYG{k}{if} \PYG{n}{subitem\PYGZus{}year}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}1990\PYGZsq{}}\PYG{p}{:}
+        \PYG{n}{data1990}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(\PYGZob{}}\PYG{n}{item}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]:} \PYG{n}{subitem\PYGZus{}year}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]\PYGZcb{})}
+        \PYG{c+c1}{\PYGZsh{} lst\PYGZus{}1990data.append((item[0], subitem\PYGZus{}year[1]))}
+        \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{where}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{,}\PYG{n}{item}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{])}
+      \PYG{k}{if} \PYG{n}{subitem\PYGZus{}year}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}2010\PYGZsq{}}\PYG{p}{:}
+        \PYG{c+c1}{\PYGZsh{} lst\PYGZus{}2010data.append((item[0], subitem\PYGZus{}year[1]))}
+        \PYG{n}{data2010}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(\PYGZob{}}\PYG{n}{item}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]:} \PYG{n}{subitem\PYGZus{}year}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]\PYGZcb{})}
+
+\PYG{n}{lst1990} \PYG{o}{=} \PYG{p}{[]}
+\PYG{n}{lst2010} \PYG{o}{=} \PYG{p}{[]}
+\PYG{k}{for} \PYG{n}{row} \PYG{o+ow}{in} \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{rows}\PYG{p}{:}
+  \PYG{n}{lst1990}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{data1990}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]))}
+  \PYG{n}{lst2010}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{data2010}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{row}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]))}
+
+\PYG{k}{try}\PYG{p}{:}
+  \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{drop}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}1990\PYGZus{}continent\PYGZus{}avg\PYGZsq{}}\PYG{p}{)}
+  \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{drop}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}2010\PYGZus{}continent\PYGZus{}avg\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{finally}\PYG{p}{:}
+  \PYG{n}{hiv\PYGZus{}tbl} \PYG{o}{=} \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{with\PYGZus{}column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}1990\PYGZus{}continent\PYGZus{}avg\PYGZsq{}}\PYG{p}{,}\PYG{n}{lst1990}\PYG{p}{)}
+  \PYG{n}{hiv\PYGZus{}tbl} \PYG{o}{=} \PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{with\PYGZus{}column}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}2010\PYGZus{}continent\PYGZus{}avg\PYGZsq{}}\PYG{p}{,}\PYG{n}{lst2010}\PYG{p}{)}
+
+\PYG{n}{hiv\PYGZus{}tbl}\PYG{o}{.}\PYG{n}{select}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}country\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}continent\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}1990\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}1990\PYGZus{}continent\PYGZus{}avg\PYGZsq{}}\PYG{p}{,}
+               \PYG{l+s+s1}{\PYGZsq{}2010\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}2010\PYGZus{}continent\PYGZus{}avg\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}

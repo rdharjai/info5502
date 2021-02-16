@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+s+s1}{\PYGZsq{}Hello World!\PYGZsq{}} \PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{)}
+\PYG{l+m+mi}{1085} \PYG{p}{(}\PYG{n}{output}\PYG{p}{)}
+\end{Verbatim}
