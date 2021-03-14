@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{figure}\PYG{p}{,} \PYG{n}{ax} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{n}{constrained\PYGZus{}layout}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{n}{figure}\PYG{o}{.}\PYG{n}{set\PYGZus{}dpi}\PYG{p}{(}\PYG{l+m+mi}{150}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{o}{*}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{o}{*}\PYG{n}{pi\PYGZus{}results}\PYG{p}{),} \PYG{n}{lw}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{c}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}black\PYGZsq{}}\PYG{p}{,} \PYG{n}{alpha}\PYG{o}{=}\PYG{l+m+mf}{0.6}\PYG{p}{,}
+		\PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}Monte Carlo Simulation\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Value of π (pi) using Monte Carlo simulation\PYGZsq{}}
+		\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{iteration}\PYG{p}{,} \PYG{n}{piValue}\PYG{p}{),} \PYG{n}{fontsize}\PYG{o}{=} \PYG{l+m+mi}{12}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Iterations\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Value of π (pi)\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{([}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{10000}\PYG{p}{,} \PYG{l+m+mi}{210000}\PYG{p}{],} \PYG{p}{[}\PYG{l+m+mf}{3.14159}\PYG{p}{,} \PYG{l+m+mf}{3.14159}\PYG{p}{],} \PYG{l+s+s1}{\PYGZsq{}r:\PYGZsq{}}\PYG{p}{,} \PYG{n}{lw}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,}
+			\PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}π = 3.14159\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylim}\PYG{p}{([}\PYG{l+m+mf}{2.0}\PYG{p}{,} \PYG{l+m+mf}{4.2}\PYG{p}{])}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{()}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}		
+\end{Verbatim}

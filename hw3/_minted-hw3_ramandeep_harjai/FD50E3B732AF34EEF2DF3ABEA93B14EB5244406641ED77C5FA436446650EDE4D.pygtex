@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{pi}\PYG{o}{\PYGZhy{}}\PYG{n}{values} \PYG{n}{computed} \PYG{n}{using} \PYG{n}{Monte} \PYG{n}{Carlo} \PYG{n}{simulation}\PYG{p}{:}
+\PYG{l+m+mf}{4.0}
+\PYG{l+m+mf}{2.0}
+\PYG{l+m+mf}{2.96}
+\PYG{l+m+mf}{3.16}
+\PYG{l+m+mf}{3.184}
+\PYG{l+m+mf}{3.136}
+\PYG{l+m+mf}{3.144}
+\PYG{l+m+mf}{3.0752}
+\PYG{l+m+mf}{3.1304}
+\PYG{l+m+mf}{3.1332}
+\PYG{l+m+mf}{3.164}
+\PYG{l+m+mf}{3.1456}
+\PYG{l+m+mf}{3.13895}
+\PYG{l+m+mf}{3.13808}
+\PYG{l+m+mf}{3.14726}
+\end{Verbatim}

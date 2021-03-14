@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}pi\PYGZhy{}values computed using Monte Carlo simulation: \PYGZdq{}}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{pi} \PYG{o+ow}{in} \PYG{n}{pi\PYGZus{}results}\PYG{p}{:}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{pi}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{])}
+\end{Verbatim}

@@ -1,0 +1,72 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} graph coordinates \PYGZam{} settings}
+\PYG{n}{originX}\PYG{p}{:}\PYG{n+nb}{int} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{originY}\PYG{p}{:}\PYG{n+nb}{int} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{radius}\PYG{p}{:}\PYG{n+nb}{int} \PYG{o}{=} \PYG{l+m+mi}{6}
+\PYG{n}{pointSize} \PYG{o}{=} \PYG{l+m+mf}{0.5}
+\PYG{n}{sqColor} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}1192e8\PYGZsq{}}
+\PYG{n}{crColor} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}\PYGZsh{}fa4d56\PYGZsq{}}
+
+\PYG{c+c1}{\PYGZsh{} number of iterations for Monte Carlo simulation}
+\PYG{n}{iterations}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+m+mi}{250}\PYG{p}{,} \PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+m+mi}{1000}\PYG{p}{,} \PYG{l+m+mi}{2500}\PYG{p}{,} \PYG{l+m+mi}{5000}\PYG{p}{,}
+            \PYG{l+m+mi}{10000}\PYG{p}{,} \PYG{l+m+mi}{20000}\PYG{p}{,} \PYG{l+m+mi}{40000}\PYG{p}{,} \PYG{l+m+mi}{80000}\PYG{p}{,} \PYG{l+m+mi}{100000}\PYG{p}{,} \PYG{l+m+mi}{200000}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{} list to store computed pi\PYGZhy{}values}
+\PYG{n}{pi\PYGZus{}results} \PYG{o}{=} \PYG{p}{[]}
+
+\PYG{c+c1}{\PYGZsh{} draw graph}
+\PYG{n}{plotCols}\PYG{p}{:}\PYG{n+nb}{int} \PYG{o}{=} \PYG{l+m+mi}{3}
+\PYG{n}{plotRows}\PYG{p}{:}\PYG{n+nb}{int} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{iterations}\PYG{p}{)}\PYG{o}{/}\PYG{n}{plotCols}\PYG{p}{)}
+\PYG{n}{figure}\PYG{p}{,} \PYG{n}{ax} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{n}{plotRows}\PYG{p}{,} \PYG{n}{plotCols}\PYG{p}{,} \PYG{n}{constrained\PYGZus{}layout}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+\PYG{n}{figure}\PYG{o}{.}\PYG{n}{set\PYGZus{}dpi}\PYG{p}{(}\PYG{l+m+mi}{150}\PYG{p}{)}
+\PYG{n}{rowCounter} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{n}{colCounter} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{k}{for} \PYG{n}{iteration} \PYG{o+ow}{in} \PYG{n}{iterations}\PYG{p}{:}
+  \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Running simulation with }\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{ iterations...\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{iteration}\PYG{p}{))}
+  \PYG{c+c1}{\PYGZsh{} draw square}
+  \PYG{n}{square} \PYG{o}{=} \PYG{n}{pth}\PYG{o}{.}\PYG{n}{Rectangle}\PYG{p}{((}\PYG{n}{originX}\PYG{p}{,}\PYG{n}{originY}\PYG{p}{),}
+                        \PYG{n}{radius}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{radius}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{,}
+                        \PYG{n}{linewidth}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,}
+                        \PYG{n}{edgecolor}\PYG{o}{=}\PYG{n}{sqColor}\PYG{p}{,}
+                        \PYG{n}{fill}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)}
+  \PYG{c+c1}{\PYGZsh{} draw circle}
+  \PYG{n}{circle} \PYG{o}{=} \PYG{n}{pth}\PYG{o}{.}\PYG{n}{Circle}\PYG{p}{((}\PYG{n}{originX}\PYG{o}{+}\PYG{n}{radius}\PYG{p}{,}\PYG{n}{originY}\PYG{o}{+}\PYG{n}{radius}\PYG{p}{),}
+                      \PYG{n}{radius}\PYG{p}{,} \PYG{n}{edgecolor}\PYG{o}{=}\PYG{n}{crColor}\PYG{p}{,}
+                      \PYG{n}{linewidth}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{fill}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)}
+
+  \PYG{n}{ax}\PYG{p}{[}\PYG{n}{rowCounter}\PYG{p}{,} \PYG{n}{colCounter}\PYG{p}{]}\PYG{o}{.}\PYG{n}{add\PYGZus{}patch}\PYG{p}{(}\PYG{n}{square}\PYG{p}{)}
+  \PYG{n}{ax}\PYG{p}{[}\PYG{n}{rowCounter}\PYG{p}{,} \PYG{n}{colCounter}\PYG{p}{]}\PYG{o}{.}\PYG{n}{add\PYGZus{}patch}\PYG{p}{(}\PYG{n}{circle}\PYG{p}{)}
+
+
+  \PYG{c+c1}{\PYGZsh{} compute \PYGZam{} draw random points for Monte Carlo simulation}
+  \PYG{n}{nInnerPoints} \PYG{o}{=} \PYG{l+m+mi}{0}
+  \PYG{n}{piValue} \PYG{o}{=} \PYG{l+m+mi}{0}
+  \PYG{k}{for} \PYG{n}{\PYGZus{}} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{iteration}\PYG{p}{):}
+    \PYG{n}{xCord}\PYG{p}{,} \PYG{n}{yCord} \PYG{o}{=} \PYG{n}{randomCoordinate}\PYG{p}{(}\PYG{n}{originX}\PYG{p}{,(}\PYG{n}{radius}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{originY}\PYG{p}{,(}\PYG{n}{radius}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n}{pointInCircle}\PYG{p}{(}\PYG{n}{xCord}\PYG{p}{,} \PYG{n}{yCord}\PYG{p}{,} \PYG{n}{originX}\PYG{o}{+}\PYG{n}{radius}\PYG{p}{,} \PYG{n}{originY}\PYG{o}{+}\PYG{n}{radius}\PYG{p}{,} \PYG{n}{radius}\PYG{p}{):}
+      \PYG{n}{ax}\PYG{p}{[}\PYG{n}{rowCounter}\PYG{p}{,} \PYG{n}{colCounter}\PYG{p}{]}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{xCord}\PYG{p}{,}\PYG{n}{yCord}\PYG{p}{,}\PYG{n}{s}\PYG{o}{=}\PYG{n}{pointSize}\PYG{p}{,}\PYG{n}{c}\PYG{o}{=}\PYG{n}{crColor}\PYG{p}{)}
+      \PYG{n}{nInnerPoints} \PYG{o}{+=} \PYG{l+m+mi}{1}
+    \PYG{k}{else}\PYG{p}{:}
+      \PYG{n}{ax}\PYG{p}{[}\PYG{n}{rowCounter}\PYG{p}{,} \PYG{n}{colCounter}\PYG{p}{]}\PYG{o}{.}\PYG{n}{scatter}\PYG{p}{(}\PYG{n}{xCord}\PYG{p}{,}\PYG{n}{yCord}\PYG{p}{,}\PYG{n}{s}\PYG{o}{=}\PYG{n}{pointSize}\PYG{p}{,}\PYG{n}{c}\PYG{o}{=}\PYG{n}{sqColor}\PYG{p}{)}
+
+  \PYG{c+c1}{\PYGZsh{} compute pi\PYGZhy{}value and store in results}
+  \PYG{n}{piValue} \PYG{o}{=} \PYG{l+m+mi}{4} \PYG{o}{*} \PYG{p}{(}\PYG{n}{nInnerPoints}\PYG{o}{/}\PYG{n}{iteration}\PYG{p}{)}
+  \PYG{n}{pi\PYGZus{}results}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{iteration}\PYG{p}{,} \PYG{n}{piValue}\PYG{p}{))}
+
+  \PYG{c+c1}{\PYGZsh{} draw sub\PYGZhy{}plot for the current iteration}
+  \PYG{n}{ax}\PYG{p}{[}\PYG{n}{rowCounter}\PYG{p}{,} \PYG{n}{colCounter}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}n=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{pi=}\PYG{l+s+si}{\PYGZob{}\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{.}\PYG{n}{format}\PYG{p}{(}\PYG{n}{iteration}\PYG{p}{,}
+                                                            \PYG{n}{piValue}\PYG{p}{),}
+                                       \PYG{n}{fontsize}\PYG{o}{=} \PYG{l+m+mi}{8}\PYG{p}{)}
+  \PYG{n}{ax}\PYG{p}{[}\PYG{n}{rowCounter}\PYG{p}{,} \PYG{n}{colCounter}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}xticks}\PYG{p}{([])}
+  \PYG{n}{ax}\PYG{p}{[}\PYG{n}{rowCounter}\PYG{p}{,} \PYG{n}{colCounter}\PYG{p}{]}\PYG{o}{.}\PYG{n}{set\PYGZus{}yticks}\PYG{p}{([])}
+  \PYG{n}{ax}\PYG{p}{[}\PYG{n}{rowCounter}\PYG{p}{,} \PYG{n}{colCounter}\PYG{p}{]}\PYG{o}{.}\PYG{n}{relim}\PYG{p}{()}
+  \PYG{n}{ax}\PYG{p}{[}\PYG{n}{rowCounter}\PYG{p}{,} \PYG{n}{colCounter}\PYG{p}{]}\PYG{o}{.}\PYG{n}{autoscale\PYGZus{}view}\PYG{p}{()}
+
+  \PYG{c+c1}{\PYGZsh{} manage sub\PYGZhy{}plot position in the grid}
+  \PYG{n}{colCounter} \PYG{o}{+=} \PYG{l+m+mi}{1}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{colCounter} \PYG{o}{\PYGZpc{}} \PYG{n}{plotCols} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{):}
+    \PYG{n}{colCounter} \PYG{o}{=} \PYG{l+m+mi}{0}
+    \PYG{n}{rowCounter} \PYG{o}{+=} \PYG{l+m+mi}{1}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{()}
+\end{Verbatim}
